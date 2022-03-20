@@ -40,30 +40,5 @@ function changecolor() {
   var ba = document.getElementById("banner");
   ba.style.color = col[seconds % 2];
 }
-// for (var i = 0; i < col.length; i++) {
-//   if (col[i] !== col[i + 1]) {
-//     ba.style.color = col[Math.floor(Math.random() * 2)];
-//   } else {
-//     ba.style.color = col[Math.floor(Math.random() * 2)];
-//   }
-// }
-
 setInterval(changecolor, 1000);
-
-// var color = ["red", "black"];
-// // change = [];
-
-// document.getElementById("banner").style.color = `${color}`;
-
-// color.forEach(function (change) {
-//   console.log(change);
-//   document.getElementById("banner").style.color = `${change}`;
-// });
-
-// for (var i = 0; i < color.length; i++) {
-//   color = color[i];
-// }
-// document.getElementById("banner").style.color = `red`;
 setInterval(mytimer, 1000);
-
-// document.getElementsByClassName("time-banner").innerHTML = "timer";
