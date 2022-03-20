@@ -1,13 +1,3 @@
-// function myTimer() {
-//   var d = new Date();
-//   var t = d.toLocaleTimeString();
-//   document.getElementById("seconds").src = `./images/0${t.charAt(6)}.gif`;
-//   document.getElementById("miliseconds").src = `./images/0${t.charAt(7)}.gif`;
-// }
-// setInterval(myTimer, 1000);
-// console.log(d);
-// curDate sẽ lưu trữ thời gian hiện tại
-
 function mytimer() {
   var d = new Date();
   var t = d.toLocaleTimeString();
@@ -20,17 +10,60 @@ function mytimer() {
 
   // Lấy giây hiện tại
   var seconds = d.getSeconds();
-  //   document.getElementById("miliseconds").src =`/images/`
+  if (hours < 10) {
+    hours = "0" + hours;
+  }
+  if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
   var timer = `${hours}:${minutes}:${seconds}`;
   document.getElementById("time-banner").textContent = timer;
   if (hours >= 0 && hours < 12) {
-    document.getElementById("time-banner").textContent = "Chào buổi sáng";
+    document.getElementById("banner").textContent = "Chào buổi sáng";
+    banner.style.fontSize = "50px";
   } else if (hours >= 12 && hours < 17) {
-    document.getElementById("time-banner").textContent = "Chào buổi chiều";
+    document.getElementById("banner").textContent = "Chào buổi chiều";
+    banner.style.fontSize = "60px";
   }
-  if (hours >= 17 && hours < 24)
+  if (hours >= 17 && hours < 24) {
     document.getElementById("banner").textContent = "Chào buổi tối";
+    banner.style.fontSize = "70px";
+  }
 }
+function changecolor() {
+  var d = new Date();
+  var seconds = d.getSeconds();
+  col = ["red", "black"];
+  var ba = document.getElementById("banner");
+  ba.style.color = col[seconds % 2];
+}
+// for (var i = 0; i < col.length; i++) {
+//   if (col[i] !== col[i + 1]) {
+//     ba.style.color = col[Math.floor(Math.random() * 2)];
+//   } else {
+//     ba.style.color = col[Math.floor(Math.random() * 2)];
+//   }
+// }
+
+setInterval(changecolor, 1000);
+
+// var color = ["red", "black"];
+// // change = [];
+
+// document.getElementById("banner").style.color = `${color}`;
+
+// color.forEach(function (change) {
+//   console.log(change);
+//   document.getElementById("banner").style.color = `${change}`;
+// });
+
+// for (var i = 0; i < color.length; i++) {
+//   color = color[i];
+// }
+// document.getElementById("banner").style.color = `red`;
 setInterval(mytimer, 1000);
 
 // document.getElementsByClassName("time-banner").innerHTML = "timer";

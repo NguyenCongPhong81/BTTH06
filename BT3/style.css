@@ -1,6 +1,6 @@
 body {
   display: flex;
-  font-size: 3rem;
+  font-size: 4rem;
   border: solid 3px rgba(219, 213, 213, 0.719);
 }
 #time-banner {
@@ -10,5 +10,6 @@ body {
   background-color: black;
 }
 #banner {
-  margin-left: 450px;
+  width: 100%;
+  text-align: center;
 }
